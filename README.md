@@ -3,12 +3,12 @@
 **Samuel Morais | UrbYON | SAMA CRM | Grupo Marlon Morais**
 **Anápolis/GO**
 
-Estrutura completa de skills, plugins e conectores organizada por categoria.
+Inventário completo de skills, plugins built-in e MCP servers organizados por categoria.
 
 ## Categorias
 
-| # | Categoria | Skills | Repositório |
-|---|-----------|--------|-------------|
+| # | Categoria | Skills | Origem |
+|---|-----------|--------|--------|
 | 01 | Processo & Orquestração | 5 | github.com/massgen/skills |
 | 02 | Design & Frontend | 10 | github.com/nextlevelbuilder/ui-ux-pro-max-skill |
 | 03 | Marketing | 38 | github.com/coreyhaines31/marketingskills |
@@ -24,51 +24,35 @@ Estrutura completa de skills, plugins e conectores organizada por categoria.
 | 13 | Ruflo (AgentDB/Swarm/V3) | 38 | — |
 | 14 | RTK (Rust/TDD) | 12 | — |
 | 15 | Outras | 18 | — |
+| 16 | Built-in Plugins (Claude Code) | 12 | Anthropic |
+| 17 | MCP Servers | 18 | Vários |
+
+**Total: 333 skills/plugins/servers**
 
 ## Estrutura
 
-Cada skill possui sua própria pasta com `SKILL.md` contendo:
+Cada skill/plugin/server tem sua própria pasta com `SKILL.md` contendo:
 - Nome
 - Categoria
 - Descrição
-- Instruções de uso
+- Instruções de uso / triggers
 
-## Comandos de instalação por repositório
+## Instalação local
 
 ```bash
-# Processo & Orquestração
-npx skills add massgen/skills -g -y
+# Linux / Mac / WSL
+./instalar-skills.sh
 
-# Design & Frontend
-npm install -g uipro-cli && uipro init --ai claude
-
-# Marketing
-npx skills add coreyhaines31/marketingskills -g -y
-
-# SEO Avançado
-git clone https://github.com/AgriciDaniel/claude-seo.git
-
-# n8n Automação
-npx skills add czlonkowski/n8n-skills -g -y
-
-# Obsidian
-npx skills add kepano/obsidian-skills -g -y
-
-# Memória Persistente
-npx skills add thedotmack/claude-mem -g -y
-
-# Contexto & Engenharia
-npx skills add muratcankoylan/Agent-Skills-for-Context-Engineering -g -y
-
-# GSD
-npx get-shit-done-cc@latest --claude --global --yes
-
-# gstack
-git clone --depth 1 https://github.com/garrytan/gstack.git
-
-# Remotion
-git clone --depth 1 https://github.com/remotion-dev/remotion.git
-
-# Caveman
-npx skills add JuliusBrussee/caveman -g -y
+# Windows PowerShell
+.\instalar-skills.ps1
 ```
+
+Os scripts copiam todas as pastas com `SKILL.md` deste repo para `~/.claude/skills/`, ativando-as no Claude Code.
+
+## Built-in plugins (16-builtin-plugins/)
+
+`code-review`, `verify`, `run`, `init`, `review`, `security-review`, `claude-api`, `loop`, `fewer-permission-prompts`, `update-config`, `keybindings-help`, `session-start-hook`
+
+## MCP Servers (17-mcp-servers/)
+
+GitHub · Notion · Stripe · Shopify · Gmail · Slack · Figma · Supabase · Vercel · Netlify · Gamma · Canva · Microsoft Learn · HuggingFace · Zapier · Windsor.ai (325+ conectores) · Pinokio · Three.js
